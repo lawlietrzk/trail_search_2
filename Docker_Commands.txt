@@ -1,0 +1,4 @@
+--Run the commands below to start a Docker Container locally
+
+docker build -t jobsearch .
+docker run -d -p 8501:8501 jobsearch
