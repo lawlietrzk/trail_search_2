@@ -6,7 +6,17 @@ import logging
 from playwright.async_api import async_playwright
 import pandas as pd
 from extract import run
+import subprocess
 
+# For running on Streamlit Cloud
+try:
+    subprocess.run(["python", "-m", "playwright", "install", "firefox"])
+except Exception as e:
+    st.error(f"Error installing Playwright or Firefox: {e}")
+try:
+    subprocess.run(["python", "-m", "playwright", "install-deps"])
+except Exception as e:
+    st.error(f"Error installing install-deps on Playwright: {e}")
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
