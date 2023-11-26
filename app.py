@@ -58,7 +58,7 @@ async def main() -> None:
             async with async_playwright() as playwright:
                 await run(
                     playwright,
-                    max_scroll=3,
+                    max_scroll=1,
                     query=f"{str(positions)} in {str(location)}",
                 )
             display_data()
