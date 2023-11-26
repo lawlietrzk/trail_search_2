@@ -6,6 +6,10 @@ import logging
 from playwright.async_api import async_playwright
 import pandas as pd
 from extract import run
+import os
+os.system("playwright install")
+os.system("playwright install firefox")
+os.system("playwright install-deps")
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
