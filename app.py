@@ -6,11 +6,6 @@ import logging
 from playwright.async_api import async_playwright
 import pandas as pd
 from extract import run
-import sys
-import subprocess
-
-subprocess.run([f"{sys.executable}", "-m playwright", "install", "firefox"])
-subprocess.run([f"{sys.executable}", "-m playwright", "install-deps"])
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
