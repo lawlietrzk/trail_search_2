@@ -6,10 +6,6 @@ import logging
 from playwright.async_api import async_playwright
 import pandas as pd
 from extract import run
-import os
-os.system("playwright install")
-os.system("playwright install firefox")
-os.system("playwright install-deps")
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -58,7 +54,7 @@ async def main() -> None:
             async with async_playwright() as playwright:
                 await run(
                     playwright,
-                    max_scroll=1,
+                    max_scroll=3,
                     query=f"{str(positions)} in {str(location)}",
                 )
             display_data()
